@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Fundamentals</title>
+    <!-- normalize.css u/ konsisten di tiap browser, font awesome u/ icons, css external, & js external -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/main.js"></script>
+    /* @font-face {
+    font-family: ;
+    src: url();
+} */
+
+/* 
+widescreen resolutions:
+1024x768 ipad
+1440x900 laptop 14"
+<option value="0.4852">
+                48.52%
+              </option>
+1920x1080 laptop 17"
+<option value="0.6469">
+                64.69%
+              </option>
+2560x1440 monitor 27"
+<option value="0.8625">
+                86.25%
+              </option>
+
+*/
+
+/* Istok Web font */
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color:#4B4C4E;
+    /* --accent-color:#007bff; */
+    --accent-color:#74C0FC;
+}
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    padding-top: 70px;
+    /* max-width: 1231px; */
+    /* max-width: 80vw;  */
+    max-width: 1024px; 
+    font-family: 'Istok Web',sans-serif;
+    margin: 0 auto;
+    /* so far no point margin 0 rn */
+}
+
+.header_title{
+    /* align-items center u/ rata vertikal 
+     merapihkan antara span sm icon 
+     margin 0 krn h2 ada default margin biar rata vertikal nya */
+    align-items: center;
+    display: flex;
+    margin: 0;
+    margin-left: 40px;
+    /* @media screen and (max-width: 798px){
+        margin-left: 0px;
+    } */
+}
+
+.header span{
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.header .fa-paper-plane{
+    color: var(--accent-color);
+}
+
+.header .fa-circle-xmark,
+.header .fa-bars{
+    display: none;
+}
+
+.header_navigation{
+    /* kalau g di flex dilayar kecil akan numpuk */
+    display: flex;
+    align-items: center;
+    gap: 6.25rem;
+    /* justify-content: space-between; */
+    /* height 52px u/  */
+    /* height: 52px; */
+    /* @media screen and (max-width: 798px){
+        gap: 20px;   
+    } */
+}
+
+.header_navigation a{
+    text-decoration: none;
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* gap: 20px;  */
+    /* margin-left: 29px; */
+    /* margin-right: 44px; */
+}
+
+.wrapper{
+    display: flex;
+}
+
+.wrapper aside{
+    width: 50%;
+    margin-top: 46px;
+    position: relative;
+}
+
+.book_circle{
+    /* width: 785px;
+    height: 785px; */
+    width: 750px;
+    height: 750px;
+    /* background-color: var(--accent-color); */
+    /* background-color: rgb(11, 11, 11); */
+    border-radius: 50%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    right: 50px;
+    /* border: black 4px solid; */
+}
+
+.book_circle img{
+    height:400px;
+    margin-bottom: 340px;
+    margin-left: 300px;
+
+}
+
+/* kalau mau disejajarin sisi kiri antara main sama nav tinggal pilih mau navnya yg geser atau main nya yg geser, pakai calc wajib pakai satuan dan spasi diantara - */
+
+main{
+    width: 50%;
+    margin-top: 40px;
+    margin-left: 8px;
+    /* margin-left: calc(967px - 846px); */
+    /* max-width: 571px; */
+    max-width: calc(1404px - 916px);
+}
+
+main h1{
+    color: var(--primary-color);
+    font-weight: 700px;
+    font-size: 2.1875rem;
+    font-family: 'Poppins';
+}
+
+main p{
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 400px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* mb20 biar ada space nanti kl pakai mobile ada ruang u/ scroll kebawah */
+}
+
+.buttons button{
+    /* border: none; */
+    border: var(--accent-color) 2px solid;  
+    border-radius: 8px;
+    padding: 16px 36px;
+    font-family: 'Poppins';
+    font-size: 15px; 
+    font-weight: 600;
+}
+
+.buttons button span{
+    margin-right: 10px;
+}
+
+.buttons_see_my_works{
+    background-color: var(--accent-color);
+    color: black;
+    /* border: var(--accent-color) 2px solid;   */
+}
+
+.buttons_schedule_a_call{
+    /* background-color: var(--primary-color); */
+    /* color: white; */
+    /* border: var(--accent-color) 2px solid;   */
+}
+
+/* laptop */
+@media screen and (max-width:1400px){
+    .header{
+        width: 90%;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width:515px){
+    /* .header_navigation{
+        display: none;
+    } */
+}
+
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <h2 class="header_title">
+            <span>Reza</span>
+            <i class="fa-solid fa-paper-plane" ></i>
+        </h2>
+        <nav class="header_navigation">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Blogs</a>
+            <a href="">Contact</a>
+        </nav>
+        <i class="fa-solid fa-bars" style="color: #74C0FC;"></i>
+        <i class="fa-solid fa-circle-xmark" style="color: #ff2954;"></i>
+    </header>
+    <!-- hero  -->
+    <div class="wrapper">
+        <aside>
+            <div class="book">
+                <div class="book_circle">
+                    <img src="images/reza.png" alt="">
+                </div>
+            </div>
+        </aside>
+        <main>
+            <h1>Hey there! 👋 Looking for a high-performing website that boosts your business?</h1>
+            <p>My name is Reza and if you need a landing page, e-commerce store, business site, or a custom web app, I’ve got you covered!</p>
+            <div class="buttons">
+                <button class="buttons_see_my_works">
+                    <span>See My Works</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+                <button class="buttons_schedule_a_call">
+                    <span>Schedule a Call</span>
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
